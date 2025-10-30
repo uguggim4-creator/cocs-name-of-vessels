@@ -141,3 +141,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     console.log('Name of Vessels - Website Initialized');
 });
+
+// Scroll Animation - Fade In on Scroll
+const faders = document.querySelectorAll('.fade-in-section');
+
+const appearOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('is-visible');
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+// Product Slider Function
+let currentSlide = 0;
+
+function slideProducts(direction) {
+    const slider = document.querySelector('.product-slider');
+    if (!slider) return;
+
+    const slideWidth = slider.querySelector('.product-slide').offsetWidth + 30; // width + gap
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    
+    currentSlide += direction * slideWidth;
+    
+    // Boundary check
+    if (currentSlide < 0) {
+        currentSlide = 0;
+    } else if (currentSlide > maxScroll) {
+        currentSlide = maxScroll;
+    }
+    
+    slider.scrollTo({
+        left: currentSlide,
+        behavior: 'smooth'
+    });
+}
+
+// Touch/Swipe support for product slider
+let touchStartX = 0;
+let touchEndX = 0;
+
+const productSlider = document.querySelector('.product-slider');
+if (productSlider) {
+    productSlider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    productSlider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+}
+
+function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+        slideProducts(1); // Swipe left
+    }
+    if (touchEndX > touchStartX + 50) {
+        slideProducts(-1); // Swipe right
+    }
+}
+
+// Gallery Item Click (optional - can add lightbox later)
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', function() {
+        console.log('Gallery item clicked:', this.querySelector('img').src);
+        // Add lightbox functionality here if needed
+    });
+});

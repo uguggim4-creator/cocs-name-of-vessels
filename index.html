@@ -36,61 +36,104 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-image">
+    <!-- Hero Section - Large Banner -->
+    <section class="hero-large fade-in-section">
+        <div class="hero-image" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;">
             <div class="hero-overlay">
                 <h1 class="hero-title">NAME OF VESSELS</h1>
+                <p class="hero-subtitle">Follow us as we create special moments together.</p>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-section">
+    <!-- Medium Banners - 3 Images -->
+    <section class="banner-grid fade-in-section">
         <div class="container">
-            <h2 class="section-title">Featured Collection</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/placeholder-1.jpg" alt="Product 1">
+            <div class="banner-medium-grid">
+                <div class="banner-item">
+                    <img src="images/2.jpg" alt="Collection 1">
+                    <div class="banner-overlay">
+                        <h3>New Collection</h3>
                     </div>
-                    <h3 class="product-name">Classic Vessel I</h3>
-                    <p class="product-price">₩120,000</p>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/placeholder-2.jpg" alt="Product 2">
+                <div class="banner-item">
+                    <img src="images/15.jpg" alt="Collection 2">
+                    <div class="banner-overlay">
+                        <h3>Featured</h3>
                     </div>
-                    <h3 class="product-name">Classic Vessel II</h3>
-                    <p class="product-price">₩150,000</p>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/placeholder-3.jpg" alt="Product 3">
+                <div class="banner-item">
+                    <img src="images/16.jpg" alt="Collection 3">
+                    <div class="banner-overlay">
+                        <h3>Best Seller</h3>
                     </div>
-                    <h3 class="product-name">Classic Vessel III</h3>
-                    <p class="product-price">₩180,000</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/placeholder-4.jpg" alt="Product 4">
-                    </div>
-                    <h3 class="product-name">Classic Vessel IV</h3>
-                    <p class="product-price">₩200,000</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Preview -->
-    <section class="about-preview">
+    <!-- Product Slider Section -->
+    <section class="product-slider-section fade-in-section">
         <div class="container">
-            <h2 class="section-title">About Name of Vessels</h2>
-            <p class="about-text">
-                우리는 시간을 담는 그릇을 만듭니다.<br>
-                각각의 제품은 고유한 이야기를 담고 있습니다.
-            </p>
-            <a href="about.html" class="btn-outline">자세히 보기</a>
+            <h2 class="section-title">Featured Products</h2>
+            <div class="slider-wrapper">
+                <button class="slider-btn prev" onclick="slideProducts(-1)">‹</button>
+                <div class="product-slider">
+                    <div class="product-slide">
+                        <img src="images/3.jpg" alt="Product 1">
+                        <h3>Classic Vessel I</h3>
+                        <p class="price">₩120,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/4.jpg" alt="Product 2">
+                        <h3>Classic Vessel II</h3>
+                        <p class="price">₩150,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/5.jpg" alt="Product 3">
+                        <h3>Classic Vessel III</h3>
+                        <p class="price">₩180,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/6.jpg" alt="Product 4">
+                        <h3>Classic Vessel IV</h3>
+                        <p class="price">₩200,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/7.jpg" alt="Product 5">
+                        <h3>Modern Vessel I</h3>
+                        <p class="price">₩220,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/8.jpg" alt="Product 6">
+                        <h3>Modern Vessel II</h3>
+                        <p class="price">₩250,000</p>
+                    </div>
+                </div>
+                <button class="slider-btn next" onclick="slideProducts(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram-style Gallery Grid -->
+    <section class="instagram-grid fade-in-section">
+        <div class="container-full">
+            <h2 class="section-title">@NAME_OF_VESSELS</h2>
+            <p class="instagram-subtitle">Follow us as we create special moments together.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/3.jpg" alt="Gallery 1"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="Gallery 2"></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="Gallery 3"></div>
+                <div class="gallery-item"><img src="images/6.jpg" alt="Gallery 4"></div>
+                <div class="gallery-item"><img src="images/7.jpg" alt="Gallery 5"></div>
+                <div class="gallery-item"><img src="images/8.jpg" alt="Gallery 6"></div>
+                <div class="gallery-item"><img src="images/9.jpg" alt="Gallery 7"></div>
+                <div class="gallery-item"><img src="images/10.jpg" alt="Gallery 8"></div>
+                <div class="gallery-item"><img src="images/11.jpg" alt="Gallery 9"></div>
+                <div class="gallery-item"><img src="images/12.jpg" alt="Gallery 10"></div>
+                <div class="gallery-item"><img src="images/13.jpg" alt="Gallery 11"></div>
+                <div class="gallery-item"><img src="images/14.jpg" alt="Gallery 12"></div>
+            </div>
         </div>
     </section>
 
