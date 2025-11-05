@@ -157,19 +157,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Modal popup logic would go here
     };
 
-    // Scroll Animation - Slide Up on Scroll
+    // Scroll Animation - Slide Up on Scroll (Optimized)
     const slideUpSections = document.querySelectorAll('.slide-up-section');
 
     const appearOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -100px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Keep observing to trigger animation every time it comes into view
+                // Unobserve after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, appearOptions);
@@ -178,30 +179,16 @@ document.addEventListener('DOMContentLoaded', function() {
         appearOnScroll.observe(section);
     });
 
+    // Remove will-change after hero animation completes
+    const heroSection = document.querySelector('.slide-down');
+    if (heroSection) {
+        setTimeout(() => {
+            heroSection.classList.add('animation-complete');
+        }, 1500);
+    }
+
     // Initialize
     console.log('Name of Vessels - Website Initialized');
-});
-
-// Parallax Effect for Floating Icons
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const scrollDelta = scrollY - lastScrollY;
-    
-    // Floating icons follow scroll with parallax
-    const icons = document.querySelectorAll('.floating-icon');
-    icons.forEach((icon, index) => {
-        const speed = 0.3 + (index * 0.1); // Different speeds for each icon
-        const currentTransform = icon.style.transform || 'translateY(0px)';
-        const currentY = parseFloat(currentTransform.match(/translateY\(([-\d.]+)px\)/) ? 
-                         currentTransform.match(/translateY\(([-\d.]+)px\)/)[1] : 0);
-        const newY = currentY + (scrollDelta * speed);
-        
-        icon.style.transform = `translateY(${newY}px)`;
-    });
-    
-    lastScrollY = scrollY;
 });
 
 // Product Slider Function

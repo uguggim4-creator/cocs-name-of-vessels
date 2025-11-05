@@ -271,31 +271,7 @@ button {
     line-height: 1;
 }
 
-/* Floating Decorative Icons */
-.floating-icon {
-    position: fixed;
-    font-size: 40px;
-    color: var(--color-black);
-    opacity: 0.1;
-    z-index: 1;
-    pointer-events: none;
-    transition: transform 0.1s ease-out;
-}
 
-.floating-icon-1 {
-    top: 20%;
-    right: 10%;
-}
-
-.floating-icon-2 {
-    bottom: 30%;
-    left: 8%;
-}
-
-.floating-icon-3 {
-    top: 60%;
-    right: 15%;
-}
 
 /* Hero Slide Down Animation */
 .hero-large {
@@ -305,8 +281,9 @@ button {
 }
 
 .slide-down {
-    animation: slideDownHero 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: slideDownHero 1.5s ease-out forwards;
     transform: translateY(-100vh) scale(1.3);
+    will-change: transform;
 }
 
 @keyframes slideDownHero {
@@ -318,6 +295,10 @@ button {
     }
 }
 
+.slide-down.animation-complete {
+    will-change: auto;
+}
+
 /* Image Zoom In and Out Effect - Combined */
 .zoom-in {
     background-size: cover !important;
@@ -327,9 +308,9 @@ button {
 /* Content Slide Up Animation */
 .slide-up-section {
     opacity: 0;
-    transform: translateY(80px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out,
+                transform 0.6s ease-out;
 }
 
 .slide-up-section.is-visible {
@@ -342,7 +323,7 @@ button {
 .slide-up-section .product-slide,
 .slide-up-section .gallery-item {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(30px);
 }
 
 .slide-up-section.is-visible .banner-item,
@@ -350,8 +331,8 @@ button {
 .slide-up-section.is-visible .gallery-item {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.4s ease-out,
+                transform 0.4s ease-out;
 }
 
 /* Staggered delays for sequential animation (left to right) */
@@ -1064,10 +1045,6 @@ button {
         padding: 14px 30px;
         font-size: 13px;
     }
-
-    .floating-icon {
-        font-size: 24px;
-    }
     
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1164,24 +1141,5 @@ button {
 
     .fixed-background-character {
         font-size: 200px;
-    }
-
-    .floating-icon {
-        font-size: 20px;
-    }
-
-    .floating-icon-1 {
-        top: 15%;
-        right: 5%;
-    }
-
-    .floating-icon-2 {
-        bottom: 25%;
-        left: 5%;
-    }
-
-    .floating-icon-3 {
-        top: 55%;
-        right: 8%;
     }
 }
