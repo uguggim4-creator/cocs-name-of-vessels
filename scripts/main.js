@@ -184,7 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroSection) {
         setTimeout(() => {
             heroSection.classList.add('animation-complete');
-        }, 1500);
+        }, 1200);
+    }
+
+    // Reduce animation on low-end devices
+    if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+        document.body.classList.add('reduced-motion');
     }
 
     // Initialize
