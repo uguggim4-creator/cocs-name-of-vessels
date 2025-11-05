@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAME OF VESSELS</title>
+    <title>기물의이름</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -11,61 +11,83 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html">NAME OF VESSELS</a>
+                <a href="index.html">기물의이름</a>
             </div>
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="shop.html">SHOP</a></li>
-                    <li><a href="archive.html">ARCHIVE</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="best.html">BEST</a></li>
-                    <li><a href="community.html">COMMUNITY</a></li>
-                </ul>
+            <nav class="nav-center">
+                <a href="shop.html">작품</a>
             </nav>
             <div class="nav-right">
-                <a href="login.html">LOGIN</a>
-                <a href="mypage.html">MY PAGE</a>
-                <a href="search.html">SEARCH</a>
-                <a href="cart.html">BAG (0)</a>
+                <a href="search.html" class="search-link">검색</a>
+                <a href="cart.html" class="order-link">주문 <span class="order-count">0</span></a>
+                <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
             </div>
-            <button class="mobile-menu-toggle" aria-label="메뉴 열기">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
-    <!-- Hero Section - Large Banner -->
-    <section class="hero-large fade-in-section">
-        <div class="hero-image" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;">
+    <!-- Slide-out Menu -->
+    <div class="slide-menu">
+        <div class="slide-menu-header">
+            <button class="close-menu" aria-label="메뉴 닫기">✕</button>
+        </div>
+        <nav class="slide-menu-nav">
+            <a href="shop.html">작품</a>
+            <a href="about.html">소개</a>
+            <a href="archive.html">아카이브</a>
+            <a href="best.html">베스트</a>
+            <a href="community.html">커뮤니티</a>
+            <hr>
+            <a href="login.html">로그인</a>
+            <a href="mypage.html">마이페이지</a>
+        </nav>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Fixed Background Character -->
+    <div class="fixed-background-character">名</div>
+
+    <!-- Floating Decorative Elements -->
+    <div class="floating-icon floating-icon-1">✦</div>
+    <div class="floating-icon floating-icon-3">✧</div>
+
+    <!-- Hero Section - Slide Down Animation -->
+    <section class="hero-large slide-down">
+        <div class="hero-image zoom-in" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;">
             <div class="hero-overlay">
-                <h1 class="hero-title">NAME OF VESSELS</h1>
-                <p class="hero-subtitle">Follow us as we create special moments together.</p>
+                <h1 class="hero-title">기물의이름</h1>
+                <p class="hero-subtitle">특별한 순간을 함께 만들어갑니다</p>
+                <div class="hero-cta">
+                    <a href="shop.html" class="hero-btn">작품 보러가기 →</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Medium Banners - 3 Images -->
-    <section class="banner-grid fade-in-section">
+    <section class="banner-grid slide-up-section">
         <div class="container">
             <div class="banner-medium-grid">
                 <div class="banner-item">
-                    <img src="images/2.jpg" alt="Collection 1">
+                    <img src="images/2.jpg" alt="신규 컬렉션">
                     <div class="banner-overlay">
-                        <h3>New Collection</h3>
+                        <h3>신규 컬렉션</h3>
                     </div>
                 </div>
                 <div class="banner-item">
-                    <img src="images/15.jpg" alt="Collection 2">
+                    <img src="images/15.jpg" alt="추천 작품">
                     <div class="banner-overlay">
-                        <h3>Featured</h3>
+                        <h3>추천 작품</h3>
                     </div>
                 </div>
                 <div class="banner-item">
-                    <img src="images/16.jpg" alt="Collection 3">
+                    <img src="images/16.jpg" alt="베스트셀러">
                     <div class="banner-overlay">
-                        <h3>Best Seller</h3>
+                        <h3>베스트셀러</h3>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="images/3.jpg" alt="특별 전시">
+                    <div class="banner-overlay">
+                        <h3>특별 전시</h3>
                     </div>
                 </div>
             </div>
@@ -73,40 +95,40 @@
     </section>
 
     <!-- Product Slider Section -->
-    <section class="product-slider-section fade-in-section">
+    <section class="product-slider-section slide-up-section">
         <div class="container">
-            <h2 class="section-title">Featured Products</h2>
+            <h2 class="section-title">추천 작품</h2>
             <div class="slider-wrapper">
                 <button class="slider-btn prev" onclick="slideProducts(-1)">‹</button>
                 <div class="product-slider">
                     <div class="product-slide">
-                        <img src="images/3.jpg" alt="Product 1">
-                        <h3>Classic Vessel I</h3>
+                        <img src="images/3.jpg" alt="백자 호">
+                        <h3>백자 호</h3>
                         <p class="price">₩120,000</p>
                     </div>
                     <div class="product-slide">
-                        <img src="images/4.jpg" alt="Product 2">
-                        <h3>Classic Vessel II</h3>
+                        <img src="images/4.jpg" alt="청자 완">
+                        <h3>청자 완</h3>
                         <p class="price">₩150,000</p>
                     </div>
                     <div class="product-slide">
-                        <img src="images/5.jpg" alt="Product 3">
-                        <h3>Classic Vessel III</h3>
+                        <img src="images/5.jpg" alt="분청 접시">
+                        <h3>분청 접시</h3>
                         <p class="price">₩180,000</p>
                     </div>
                     <div class="product-slide">
-                        <img src="images/6.jpg" alt="Product 4">
-                        <h3>Classic Vessel IV</h3>
+                        <img src="images/6.jpg" alt="흑유 항아리">
+                        <h3>흑유 항아리</h3>
                         <p class="price">₩200,000</p>
                     </div>
                     <div class="product-slide">
-                        <img src="images/7.jpg" alt="Product 5">
-                        <h3>Modern Vessel I</h3>
+                        <img src="images/7.jpg" alt="백자 사발">
+                        <h3>백자 사발</h3>
                         <p class="price">₩220,000</p>
                     </div>
                     <div class="product-slide">
-                        <img src="images/8.jpg" alt="Product 6">
-                        <h3>Modern Vessel II</h3>
+                        <img src="images/8.jpg" alt="청자 병">
+                        <h3>청자 병</h3>
                         <p class="price">₩250,000</p>
                     </div>
                 </div>
@@ -116,23 +138,23 @@
     </section>
 
     <!-- Instagram-style Gallery Grid -->
-    <section class="instagram-grid fade-in-section">
+    <section class="instagram-grid slide-up-section">
         <div class="container-full">
-            <h2 class="section-title">@NAME_OF_VESSELS</h2>
-            <p class="instagram-subtitle">Follow us as we create special moments together.</p>
+            <h2 class="section-title">@기물의이름</h2>
+            <p class="instagram-subtitle">특별한 순간을 함께 만들어갑니다</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/3.jpg" alt="Gallery 1"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="Gallery 2"></div>
-                <div class="gallery-item"><img src="images/5.jpg" alt="Gallery 3"></div>
-                <div class="gallery-item"><img src="images/6.jpg" alt="Gallery 4"></div>
-                <div class="gallery-item"><img src="images/7.jpg" alt="Gallery 5"></div>
-                <div class="gallery-item"><img src="images/8.jpg" alt="Gallery 6"></div>
-                <div class="gallery-item"><img src="images/9.jpg" alt="Gallery 7"></div>
-                <div class="gallery-item"><img src="images/10.jpg" alt="Gallery 8"></div>
-                <div class="gallery-item"><img src="images/11.jpg" alt="Gallery 9"></div>
-                <div class="gallery-item"><img src="images/12.jpg" alt="Gallery 10"></div>
-                <div class="gallery-item"><img src="images/13.jpg" alt="Gallery 11"></div>
-                <div class="gallery-item"><img src="images/14.jpg" alt="Gallery 12"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="작품 1"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="작품 2"></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="작품 3"></div>
+                <div class="gallery-item"><img src="images/6.jpg" alt="작품 4"></div>
+                <div class="gallery-item"><img src="images/7.jpg" alt="작품 5"></div>
+                <div class="gallery-item"><img src="images/8.jpg" alt="작품 6"></div>
+                <div class="gallery-item"><img src="images/9.jpg" alt="작품 7"></div>
+                <div class="gallery-item"><img src="images/10.jpg" alt="작품 8"></div>
+                <div class="gallery-item"><img src="images/11.jpg" alt="작품 9"></div>
+                <div class="gallery-item"><img src="images/12.jpg" alt="작품 10"></div>
+                <div class="gallery-item"><img src="images/13.jpg" alt="작품 11"></div>
+                <div class="gallery-item"><img src="images/14.jpg" alt="작품 12"></div>
             </div>
         </div>
     </section>
@@ -142,20 +164,20 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>NAME OF VESSELS</h4>
-                    <p>© 2025 Name of Vessels. All rights reserved.</p>
+                    <h4>기물의이름</h4>
+                    <p>© 2025 기물의이름. All rights reserved.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>CUSTOMER SERVICE</h4>
+                    <h4>고객 지원</h4>
                     <ul>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">배송 정보</a></li>
                         <li><a href="#">교환 및 반품</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>COMPANY</h4>
+                    <h4>회사 정보</h4>
                     <ul>
                         <li><a href="#">회사 소개</a></li>
                         <li><a href="#">이용 약관</a></li>
@@ -163,11 +185,11 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>FOLLOW US</h4>
+                    <h4>소셜 미디어</h4>
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">인스타그램</a></li>
+                        <li><a href="#">페이스북</a></li>
+                        <li><a href="#">유튜브</a></li>
                     </ul>
                 </div>
             </div>

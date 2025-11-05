@@ -1,21 +1,50 @@
-// Mobile Menu Toggle
+// Slide-out Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.nav');
-    const navRight = document.querySelector('.nav-right');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeMenu = document.querySelector('.close-menu');
+    const slideMenu = document.querySelector('.slide-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const header = document.querySelector('.header');
     
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            
-            if (nav) {
-                nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-            }
-            if (navRight) {
-                navRight.style.display = navRight.style.display === 'flex' ? 'none' : 'flex';
-            }
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Open menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            slideMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';                        
         });
     }
+    
+    // Close menu
+    function closeSlideMenu() {
+        slideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (closeMenu) {
+        closeMenu.addEventListener('click', closeSlideMenu);
+    }
+    
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeSlideMenu);
+    }
+    
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
+            closeSlideMenu();
+        }
+    });
 
     // Product Card Hover Effects
     const productCards = document.querySelectorAll('.product-card');
@@ -55,17 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Header Shadow on Scroll
-    const header = document.querySelector('.header');
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        });
-    }
+    // Header Shadow on Scroll (already handled above in header scroll effect)
 
     // Shopping Cart Counter (example)
     let cartCount = 0;
@@ -138,31 +157,51 @@ document.addEventListener('DOMContentLoaded', function() {
         // Modal popup logic would go here
     };
 
+    // Scroll Animation - Slide Up on Scroll
+    const slideUpSections = document.querySelectorAll('.slide-up-section');
+
+    const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Keep observing to trigger animation every time it comes into view
+            }
+        });
+    }, appearOptions);
+
+    slideUpSections.forEach(section => {
+        appearOnScroll.observe(section);
+    });
+
     // Initialize
     console.log('Name of Vessels - Website Initialized');
 });
 
-// Scroll Animation - Fade In on Scroll
-const faders = document.querySelectorAll('.fade-in-section');
+// Parallax Effect for Floating Icons
+let lastScrollY = window.scrollY;
 
-const appearOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -100px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('is-visible');
-            appearOnScroll.unobserve(entry.target);
-        }
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const scrollDelta = scrollY - lastScrollY;
+    
+    // Floating icons follow scroll with parallax
+    const icons = document.querySelectorAll('.floating-icon');
+    icons.forEach((icon, index) => {
+        const speed = 0.3 + (index * 0.1); // Different speeds for each icon
+        const currentTransform = icon.style.transform || 'translateY(0px)';
+        const currentY = parseFloat(currentTransform.match(/translateY\(([-\d.]+)px\)/) ? 
+                         currentTransform.match(/translateY\(([-\d.]+)px\)/)[1] : 0);
+        const newY = currentY + (scrollDelta * speed);
+        
+        icon.style.transform = `translateY(${newY}px)`;
     });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
+    
+    lastScrollY = scrollY;
 });
 
 // Product Slider Function
