@@ -479,6 +479,34 @@ button {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Brand Introduction Section */
+.brand-intro-section {
+    padding: 120px 0;
+    background-color: transparent;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.brand-intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.brand-intro-text {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+    margin-bottom: 30px;
+}
+
+.brand-intro-text:last-child {
+    margin-bottom: 0;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -665,6 +693,57 @@ button {
     margin: 0;
     position: relative;
     z-index: 2;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 150px 0;
+    background-color: transparent;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.philosophy-intro {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+    margin-bottom: 40px;
+}
+
+.philosophy-series {
+    margin-top: 40px;
+}
+
+.philosophy-text {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+    margin-bottom: 30px;
+}
+
+.philosophy-text strong {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.philosophy-conclusion {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .container-full {
@@ -1055,6 +1134,23 @@ button {
         padding: 14px 30px;
         font-size: 13px;
     }
+
+    .brand-intro-text {
+        font-size: 18px;
+    }
+
+    .philosophy-intro,
+    .philosophy-text {
+        font-size: 16px;
+    }
+
+    .philosophy-text strong {
+        font-size: 17px;
+    }
+
+    .philosophy-conclusion {
+        font-size: 15px;
+    }
     
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1139,6 +1235,32 @@ button {
     .hero-btn {
         padding: 12px 25px;
         font-size: 12px;
+    }
+
+    .brand-intro-section {
+        padding: 80px 0;
+    }
+
+    .brand-intro-content {
+        padding: 0 20px;
+    }
+
+    .brand-intro-text {
+        font-size: 16px;
+    }
+
+    .philosophy-content {
+        padding: 0 20px;
+    }
+
+    .philosophy-intro,
+    .philosophy-text,
+    .philosophy-conclusion {
+        font-size: 14px;
+    }
+
+    .philosophy-text strong {
+        font-size: 15px;
     }
 
     .gallery-grid {
