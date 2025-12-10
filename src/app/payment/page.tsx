@@ -10,7 +10,9 @@ const customerKey = 'test_customer_key';
 function PaymentContent() {
   const searchParams = useSearchParams();
   const amountParam = searchParams.get('amount');
+  const orderNameParam = searchParams.get('orderName');
   const initialAmount = amountParam ? parseInt(amountParam, 10) : 50000;
+  const orderName = orderNameParam || '토스 티셔츠 외 2건';
 
   const [widgets, setWidgets] = useState<TossPaymentsWidgets | null>(null);
   const [amount, setAmount] = useState({
@@ -68,7 +70,7 @@ function PaymentContent() {
     try {
       await widgets.requestPayment({
         orderId: `order-${Math.random().toString(36).substring(2, 12)}`,
-        orderName: '토스 티셔츠 외 2건',
+        orderName: orderName,
         successUrl: window.location.origin + '/payment/success',
         failUrl: window.location.origin + '/payment/fail',
         customerEmail: 'customer123@gmail.com',
