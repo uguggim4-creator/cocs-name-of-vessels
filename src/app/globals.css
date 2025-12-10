@@ -81,6 +81,8 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    gap: 1px; /* Modern grid line effect */
+    background-color: #fff; /* Ensure lines are white if gap shows background */
 }
 
 .grid-item {
@@ -88,13 +90,14 @@ nav a:hover {
     aspect-ratio: 1 / 1; /* Square tiles */
     overflow: hidden;
     cursor: pointer;
+    background-color: #f0f0f0; /* Placeholder color */
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
 }
 
 .grid-item:hover img {
@@ -107,15 +110,16 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3); /* Slightly darker for better text visibility */
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     font-family: 'Noto Serif KR', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Larger text */
+    letter-spacing: 0.1em; /* More elegant spacing */
 }
 
 .grid-item:hover .grid-overlay {
@@ -180,36 +184,50 @@ nav a:hover {
 
 /* Footer */
 footer {
-    padding: 4rem;
-    background-color: #f9f9f9;
-    margin-top: 4rem;
+    padding: 5rem 4rem; /* More vertical padding */
+    background-color: #fcfcfc; /* Very light gray */
+    margin-top: 6rem;
     font-size: 0.85rem;
-    color: #555;
+    color: #666;
+    border-top: 1px solid #eee;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
 .footer-section h4 {
     font-family: 'Noto Serif KR', serif;
     margin-bottom: 1.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: #333;
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem; /* More spacing between links */
+}
+
+.footer-section a {
+    transition: color 0.2s;
+}
+
+.footer-section a:hover {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .copyright {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #ddd;
-    font-size: 0.8rem;
-    color: #888;
+    border-top: 1px solid #eee;
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.05em;
 }
 
 /* Responsive Design */

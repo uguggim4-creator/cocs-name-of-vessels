@@ -2,25 +2,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px; /* Reduced padding for sleeker look */
   background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  /* No border initially to match the "empty space" look */
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #eee; /* Add border only when scrolled */
-  padding: 15px 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background-color: rgba(255, 255, 255, 0.98); /* More opaque */
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 40px; /* Even smaller when scrolled */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Softer shadow */
 }
 
 .navGroup {
   display: flex;
-  gap: 30px;
+  gap: 40px; /* More space between items */
   flex: 1;
 }
 
