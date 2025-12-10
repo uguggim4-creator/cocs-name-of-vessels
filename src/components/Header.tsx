@@ -50,6 +50,7 @@ export default function Header() {
       <nav className={styles.navGroup}>
         <Link href="/shop" className={styles.link}>SHOP</Link>
         <Link href="/about" className={styles.link}>ABOUT</Link>
+        <Link href="/admin" className={styles.link}>ADMIN</Link>
       </nav>
       
       <div className={styles.logo}>
@@ -59,12 +60,14 @@ export default function Header() {
       </div>
 
       <nav className={`${styles.navGroup} ${styles.right}`}>
-        <Link href="/journal" className={styles.link}>JOURNAL</Link>
-        <Link href="/contact" className={styles.link}>CONTACT</Link>
+        <Link href="/cart" className={styles.link}>CART</Link>
         {user ? (
-          <button onClick={handleLogout} className={styles.link} style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}>
-            LOGOUT
-          </button>
+          <>
+            <Link href="/mypage" className={styles.link}>MY PAGE</Link>
+            <button onClick={handleLogout} className={styles.link} style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}>
+              LOGOUT
+            </button>
+          </>
         ) : (
           <Link href="/login" className={styles.link}>LOGIN</Link>
         )}

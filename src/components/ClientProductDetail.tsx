@@ -1,28 +1,30 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { Product } from '@/lib/products';
 import Link from 'next/link';
-import { products } from '@/lib/products';
-import { notFound } from 'next/navigation';
 import AddToCartButton from '@/components/AddToCartButton';
 import ProductReviews from '@/components/ProductReviews';
-import ClientProductDetail from '@/components/ClientProductDetail';
+import { notFound } from 'next/navigation';
 
-interface ProductDetailProps {
-  params: Promise<{
-    id: string;
-  }>;
-}
+export default function ClientProductDetail({ id }: { id: string }) {
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
 
-export async function generateStaticParams() {
-  return products.map((product) => ({
-    id: product.id.toString(),
-  }));
-}
+  useEffect(() => {
+    const localProducts = JSON.parse(localStorage.getItem('adminProducts') || '[]');
+    const found = localProducts.find((p: Product) => p.id.toString() === id);
+    
+    if (found) {
+      setProduct(found);
+    }
+    setLoading(false);
+  }, [id]);
 
-export default async function ProductDetail({ params }: ProductDetailProps) {
-  const { id } = await params;
-  const product = products.find((p) => p.id === parseInt(id));
+  if (loading) return <div className="p-10 text-center">Loading...</div>;
 
   if (!product) {
-    return <ClientProductDetail id={id} />;
+    return <div className="p-10 text-center">Product not found.</div>;
   }
 
   return (
