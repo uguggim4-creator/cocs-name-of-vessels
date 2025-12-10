@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  /* No border initially to match the "empty space" look */
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eee; /* Add border only when scrolled */
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navGroup {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+}
+
+.navGroup.right {
+  justify-content: flex-end;
+}
+
+.logo {
+  text-align: center;
+  flex: 1;
+}
+
+.logoLink {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #000;
+  text-decoration: underline;
+}
