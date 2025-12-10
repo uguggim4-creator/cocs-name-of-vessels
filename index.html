@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기물의이름</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">기물의이름</a>
+            </div>
+            <div class="nav-right">
+                <a href="search.html" class="search-link">검색</a>
+                <a href="cart.html" class="order-link">주문 <span class="order-count">0</span></a>
+                <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu">
+        <div class="slide-menu-header">
+            <button class="close-menu" aria-label="메뉴 닫기">✕</button>
+        </div>
+        <nav class="slide-menu-nav">
+            <a href="shop.html">작품</a>
+            <a href="about.html">소개</a>
+            <a href="archive.html">아카이브</a>
+            <a href="best.html">베스트</a>
+            <a href="community.html">커뮤니티</a>
+            <hr>
+            <a href="login.html">로그인</a>
+            <a href="mypage.html">마이페이지</a>
+        </nav>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Fixed Background Character -->
+    <div class="fixed-background-character">名</div>
+
+    <!-- Hero Section - Slide Down Animation -->
+    <section class="hero-large slide-down">
+        <div class="hero-image zoom-in" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;" loading="eager">
+            <div class="hero-overlay">
+                <h1 class="hero-title">기물의이름</h1>
+                <p class="hero-subtitle">특별한 순간을 함께 만들어갑니다</p>
+                <div class="hero-cta">
+                    <a href="shop.html" class="hero-btn">작품 보러가기 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Philosophy Introduction -->
+    <section class="brand-intro-section slide-up-section">
+        <div class="container">
+            <div class="brand-intro-content">
+                <p class="brand-intro-text">기물의 이름은 기의 부분명을 탐구하며 한국적 조형언어의 단면들을 재해석합니다.</p>
+                <p class="brand-intro-text">몸과 자연과 기물로 우리는 전통과 현대를 이어 새롭게 관계 맺고 이름 지어집니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Slider Section -->
+    <section class="product-slider-section slide-up-section">
+        <div class="container">
+            <h2 class="section-title">추천 작품</h2>
+            <div class="slider-wrapper">
+                <button class="slider-btn prev" onclick="slideProducts(-1)">‹</button>
+                <div class="product-slider">
+                    <div class="product-slide">
+                        <img src="images/3.jpg" alt="백자 호" loading="lazy">
+                        <h3>백자 호</h3>
+                        <p class="price">₩120,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/4.jpg" alt="청자 완" loading="lazy">
+                        <h3>청자 완</h3>
+                        <p class="price">₩150,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/5.jpg" alt="분청 접시" loading="lazy">
+                        <h3>분청 접시</h3>
+                        <p class="price">₩180,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/6.jpg" alt="흑유 항아리" loading="lazy">
+                        <h3>흑유 항아리</h3>
+                        <p class="price">₩200,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/7.jpg" alt="백자 사발" loading="lazy">
+                        <h3>백자 사발</h3>
+                        <p class="price">₩220,000</p>
+                    </div>
+                    <div class="product-slide">
+                        <img src="images/8.jpg" alt="청자 병" loading="lazy">
+                        <h3>청자 병</h3>
+                        <p class="price">₩250,000</p>
+                    </div>
+                </div>
+                <button class="slider-btn next" onclick="slideProducts(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram-style Gallery Grid -->
+    <section class="instagram-grid slide-up-section">
+        <div class="container-full">
+            <h2 class="section-title">@기물의이름</h2>
+            <p class="instagram-subtitle">특별한 순간을 함께 만들어갑니다</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/3.jpg" alt="작품 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="작품 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="작품 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/6.jpg" alt="작품 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/7.jpg" alt="작품 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/8.jpg" alt="작품 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/9.jpg" alt="작품 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/10.jpg" alt="작품 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/11.jpg" alt="작품 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/12.jpg" alt="작품 10" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/13.jpg" alt="작품 11" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/14.jpg" alt="작품 12" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section slide-up-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <p class="philosophy-intro">전통 기물의 명명 체계, 곧 器의 部分名(부분명)에서 출발하는 브랜드의 철학은,</p>
+                <div class="philosophy-series">
+                    <p class="philosophy-text">
+                        몸의 내면적 움직임이 형태로 번역되는 순간을 담는 <strong>「몸의 언어」</strong> 시리즈와 
+                        자연의 외면적 흔적을 기록하는 <strong>「풍경의 언어」</strong> 시리즈로 전개됩니다.
+                    </p>
+                    <p class="philosophy-conclusion">
+                        내면과 외면의 에너지를 새롭게 명명하며, 재료적 실험을 통해 전통을 현대적으로 전달합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medium Banners - 4 Images -->
+    <section class="banner-grid slide-up-section">
+        <div class="container">
+            <div class="banner-medium-grid">
+                <div class="banner-item">
+                    <img src="images/2.jpg" alt="신규 컬렉션" loading="lazy">
+                    <div class="banner-overlay">
+                        <h3>신규 컬렉션</h3>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="images/15.jpg" alt="추천 작품" loading="lazy">
+                    <div class="banner-overlay">
+                        <h3>추천 작품</h3>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="images/16.jpg" alt="베스트셀러" loading="lazy">
+                    <div class="banner-overlay">
+                        <h3>베스트셀러</h3>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="images/3.jpg" alt="특별 전시" loading="lazy">
+                    <div class="banner-overlay">
+                        <h3>특별 전시</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>기물의이름</h4>
+                    <p>© 2025 기물의이름. All rights reserved.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>고객 지원</h4>
+                    <ul>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">배송 정보</a></li>
+                        <li><a href="#">교환 및 반품</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">이용 약관</a></li>
+                        <li><a href="#">개인정보 처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <ul>
+                        <li><a href="#">인스타그램</a></li>
+                        <li><a href="#">페이스북</a></li>
+                        <li><a href="#">유튜브</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
