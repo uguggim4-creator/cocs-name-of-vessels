@@ -1,45 +1,62 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
+import ProductSlider from '@/components/ProductSlider';
 
 export default function Home() {
   return (
-    <div className="main-grid">
-      {/* 3x3 Grid Items */}
-      <div className="grid-item">
-        <Image src="/images/1.jpg" alt="Vessel 1" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Moon Jar</div>
+    <div className={styles.container}>
+      <div className={styles.splitScreen}>
+        {/* Left Side: Vase Collection */}
+        <Link href="/shop?category=vase" className={styles.splitItem}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/images/메인 3-1.jpg"
+              alt="Vase Collection"
+              fill
+              className={styles.image}
+              priority
+            />
+          </div>
+          <div className={styles.content}>
+            <span className={styles.category}>Collection 01</span>
+            <h2 className={styles.title}>The Vase</h2>
+            <p className={styles.description}>
+              곡선의 미학이 담긴 화병 컬렉션을 만나보세요.<br />
+              공간에 우아함을 더해주는 오브제입니다.
+            </p>
+            <span className={styles.button}>View Collection</span>
+          </div>
+        </Link>
+
+        {/* Right Side: Cup Collection */}
+        <Link href="/shop?category=cup" className={styles.splitItem}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/images/메인 3-2.jpg"
+              alt="Cup Collection"
+              fill
+              className={styles.image}
+              priority
+            />
+          </div>
+          <div className={styles.content}>
+            <span className={styles.category}>Collection 02</span>
+            <h2 className={styles.title}>The Cup</h2>
+            <p className={styles.description}>
+              일상의 온기를 전하는 컵 컬렉션입니다.<br />
+              손끝에 닿는 감촉까지 생각했습니다.
+            </p>
+            <span className={styles.button}>View Collection</span>
+          </div>
+        </Link>
       </div>
-      <div className="grid-item">
-        <Image src="/images/2.jpg" alt="Vessel 2" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">White Porcelain</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/3.jpg" alt="Vessel 3" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Celadon</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/4.jpg" alt="Vessel 4" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Tea Bowl</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/5.jpg" alt="Vessel 5" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Vase</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/6.jpg" alt="Vessel 6" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Plate</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/7.jpg" alt="Vessel 7" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Cup</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/8.jpg" alt="Vessel 8" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Pot</div>
-      </div>
-      <div className="grid-item">
-        <Image src="/images/9.jpg" alt="Vessel 9" fill style={{ objectFit: 'cover' }} />
-        <div className="grid-overlay">Bowl</div>
-      </div>
+
+      {/* Product Slider Section */}
+      <ProductSlider />
     </div>
   );
 }
+

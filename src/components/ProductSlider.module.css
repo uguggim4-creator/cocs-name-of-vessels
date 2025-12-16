@@ -1,0 +1,151 @@
+.container {
+  padding: 80px 50px;
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 60px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 20px 0; /* Add padding for hover effects */
+  width: 100%;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.card {
+  flex: 0 0 300px; /* 카드 너비 고정 */
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+.enName {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+  display: block;
+  font-family: 'Noto Serif KR', serif;
+  letter-spacing: 1px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  font-size: 18px;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 0; /* Hide initially */
+  pointer-events: none;
+}
+
+.container:hover .arrowButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.arrowButton:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 20px;
+  }
+  
+  .card {
+    flex: 0 0 240px;
+  }
+  
+  .prevButton {
+    left: 0;
+  }
+  
+  .nextButton {
+    right: 0;
+  }
+}

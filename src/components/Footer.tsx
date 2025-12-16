@@ -7,23 +7,22 @@ export default function Footer() {
         <div className="footer-section">
           <h4>CLIENT SERVICE</h4>
           <ul>
-            <li><Link href="#">Account</Link></li>
-            <li><Link href="#">Orders</Link></li>
-            <li><Link href="#">Returns</Link></li>
+            <li><Link href="/mypage">Account</Link></li>
+            <li><Link href="/mypage">Orders</Link></li>
+            <li><Link href="/returns">Returns</Link></li>
           </ul>
         </div>
         <div className="footer-section">
           <h4>LEGAL</h4>
           <ul>
-            <li><Link href="#">Terms of Use</Link></li>
-            <li><Link href="#">Privacy Policy</Link></li>
+            <li><Link href="/terms">Terms of Use</Link></li>
+            <li><Link href="/privacy">Privacy Policy</Link></li>
           </ul>
         </div>
         <div className="footer-section">
           <h4>FOLLOW</h4>
           <ul>
-            <li><Link href="#">Instagram</Link></li>
-            <li><Link href="#">Facebook</Link></li>
+            <li><Link href="https://www.instagram.com/makingkiko/" target="_blank" rel="noopener noreferrer">Instagram</Link></li>
           </ul>
         </div>
         <div className="footer-section">
