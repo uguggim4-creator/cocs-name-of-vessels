@@ -1,56 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-const products = [
-  {
-    id: 1,
-    name: '높고 둥근 굽의 잔 - 백색',
-    nameEn: 'Tall Round-footed Cup - White',
-    image: '/images/높고 둥근 굽의 잔 - 백색.jpg',
-    price: null,
-    category: 'cup',
-  },
-  {
-    id: 2,
-    name: '높고 둥근 굽의 잔 - 흑색',
-    nameEn: 'Tall Round-footed Cup - Black',
-    image: '/images/높고 둥근 굽의 잔 - 흑색.jpg',
-    price: null,
-    category: 'cup',
-  },
-  {
-    id: 3,
-    name: '유선 화병',
-    nameEn: 'Streamlined Vase',
-    image: '/images/유선화병.jpg',
-    price: null,
-    category: 'vase',
-  },
-  {
-    id: 4,
-    name: '바위 능선 화병',
-    nameEn: 'Rock Ridge Vase',
-    image: '/images/바위 능선 화병.jpg',
-    price: null,
-    category: 'vase',
-  },
-  {
-    id: 5,
-    name: '난초줄기 화병',
-    nameEn: 'Orchid Stem Vase',
-    image: '/images/난초줄기화병.jpg',
-    price: null,
-    category: 'vase',
-  },
-  {
-    id: 6,
-    name: '작은 봉우리 화병',
-    nameEn: 'Small Peak Vase',
-    image: '/images/작은 봉우리 화병.jpg',
-    price: null,
-    category: 'vase',
-  },
-];
+import { products } from '@/lib/products';
 
 export default function ShopPage() {
   return (
@@ -80,7 +30,7 @@ export default function ShopPage() {
                 </div>
                 <div className="product-info">
                   <h3 className="product-name">{product.name}</h3>
-                  <p className="product-price">{product.nameEn}</p>
+                  <p className="product-price">₩{product.price.toLocaleString()}</p>
                 </div>
               </Link>
             ))}
